@@ -1,3 +1,9 @@
+<?php
+
+    session_start();
+
+?>
+
 <!-- Navigation for main page, add page and search page -->
 <nav class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-left">
@@ -5,7 +11,7 @@
     </div>
     <div class="uk-navbar-center">
         <div class="uk-navbar-item">
-            <input type="text" class="uk-input" name="username" placeholder="Username">
+            <input type="text" class="uk-input" name="username" placeholder="Username" value="<?php echo $_SESSION['username'] ?>">
         </div>
     </div>
     <div class="uk-navbar-right">
