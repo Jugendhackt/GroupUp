@@ -16,6 +16,22 @@
     <link rel="stylesheet" href="css/xtra-style.css">
 
     <title>GroupUp</title>
+
+    <script>
+        function openProject(id) {
+            var all=document.getElementsByClassName('opened');
+            [].forEach.call(all, function (element) {
+                if (element.id !== "project_" + id){
+                    element.classList.remove("opened");
+                    element.classList.remove("uk-flex-first");
+                }
+            });
+            var elem=document.getElementById("project_" + id);
+            elem.classList.toggle("opened");
+            elem.classList.toggle("uk-flex-first");
+        }
+    </script>
+
 </head>
 <body>
 
@@ -44,7 +60,7 @@
                 $event = getEventById($project['eventId']);
                 $tags = getTagsByProjectId($project['id']);
                 echo <<<card
-        <div class="uk-card uk-width-large uk-height-large">
+        <div id="project_{$project['id']}" class="uk-card uk-width-large uk-height-large" onclick="openProject({$project['id']})">
             <div class="uk-card-body">
                 <h3 class="uk-card-title">{$project['name']}</h3>
                 <p class="uk-text-muted">{$event['name']}</p>
@@ -62,88 +78,6 @@ card;
             }
 
         ?>
-
-        <div class="uk-card uk-width-large uk-height-large">
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">Some Project</h3>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo</p>
-            </div>
-            <div class="uk-card-footer">
-                <a>I'm interested!</a>
-            </div>
-        </div>
-        <div class="uk-card uk-width-large uk-height-large">
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">Some Project</h3>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo</p>
-            </div>
-            <div class="uk-card-footer">
-                <a>I'm interested!</a>
-            </div>
-        </div>
-
-        <!-- Card for testing the layout of a big card -->
-        <div class="uk-card uk-width-large uk-height-large uk-flex-first" style="width: 100%; background: #29abe1;">
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">Some Project</h3>
-                <div uk-grid>
-                <div><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo</p></div>
-                    <!-- Hidden Values -> Show on click and get LARGE -->
-                    <div>
-                        <h2>Das Produkt</h2>
-                    </div>
-                    <div>
-                        <h2>Probleme / Fragestellung</h2>
-                    </div>
-                    <div>
-                        <h2>Daten & Technologien</h2>
-                    </div>
-                    <div>
-                        <h2>Was Fehlt Uns?</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="uk-card-footer">
-                <a>I'm interested!</a>
-            </div>
-        </div>
-
-        <div class="uk-card uk-width-large uk-height-large">
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">Some Project</h3>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo</p>
-            </div>
-            <div class="uk-card-footer">
-                <a>I'm interested!</a>
-            </div>
-        </div>
-        <div class="uk-card uk-width-large">
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">Some Project</h3>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo</p>
-            </div>
-            <div class="uk-card-footer">
-                <a>I'm interested!</a>
-            </div>
-        </div>
-        <div class="uk-card uk-width-large">
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">Some Project</h3>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo</p>
-            </div>
-            <div class="uk-card-footer">
-                <a>I'm interested!</a>
-            </div>
-        </div>
-        <div class="uk-card uk-width-large">
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">Some Project</h3>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo</p>
-            </div>
-            <div class="uk-card-footer">
-                <a>I'm interested!</a>
-            </div>
-        </div>
     </div>
 </div>
 

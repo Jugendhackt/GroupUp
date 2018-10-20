@@ -1,3 +1,8 @@
 .hide-details {
     visibility: hidden;
 }
+
+/* index.php */
+.opened {
+    width: 100%;
+}
