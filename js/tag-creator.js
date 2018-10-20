@@ -6,6 +6,7 @@ let tagList;
 let tagName;
 let tagColor;
 let addButton;
+let colorPicker;
 
 let currentTagsMap = {};
 let currentRealTagsMap = {};
@@ -28,22 +29,23 @@ function addNewTag() {
     currentTagInput.type = "hidden";
     currentTagInput.name =`tags[${currentTag.innerText}]`;
     currentTagInput.dataset.id = currentTag.dataset.id;
-    let cols = currentTag.style.backgroundColor;
-    currentTagInput.value = rgbToHex(cols[0], cols[1], cols[2]);
+    colorPicker.style.backgroundColor = currentTag.style.backgroundColor;
     currentRealTagsMap[currentTag.dataset.id] = currentTagInput;
     tagsInForm.append(currentTagInput);
     currentTag.onclick = (ev) => {
         ev = ev || window.event;
-        currentTag = ev.target || ev.srcElement;
-        let cols = currentTag.style.backgroundColor.match(/(\d+)\,\ (\d+)\,\ (\d+)/g);
-        tagColor.value = rgbToHex(cols[0], cols[1], cols[2]);
+        let tag = ev.target || ev.srcElement;
+        selectTag(tag);
     };
 
     currentTag.ondblclick = (ev) => {
         ev = ev || window.event;
         currentTag = ev.target || ev.srcElement;
-
-
+        currentRealTagsMap[currentTag.dataset.id].remove();
+        currentRealTagsMap[currentTag.dataset.id] = undefined;
+        currentTagsMap[currentTag.dataset.id] = undefined;
+        currentTag.remove();
+        selectTag(currentTagsMap.firstChild);
     }
 }
 
@@ -53,6 +55,11 @@ window.onload = function () {
     tagName = document.getElementById("tagName");
     tagList = document.getElementById("tagList");
     tagsInForm = document.getElementById("tagsInForm");
+    colorPicker = document.getElementById("colorPicker");
+
+    colorPicker.onclick = () => {
+        tagColor.click();
+    };
 
     addButton.onclick = addNewTag;
     addNewTag();
@@ -68,9 +75,19 @@ window.onload = function () {
     }
 };
 
+function selectTag(tag){
+    currentTag = tag;
+    tagName.value = currentTag.innerText;
+    let cols = currentTag.style.backgroundColor.match(/(\d+)\,\ (\d+)\,\ (\d+)/g);
+    tagColor.value = rgbToHex(cols[0], cols[1], cols[2]);
+}
+
 function onTagEdit(){
     currentTag.style.backgroundColor = tagColor.value;
+    colorPicker.style.backgroundColor = tagColor.value;
     currentTag.innerText = tagName.value;
+    currentRealTagsMap[currentTag.dataset.id].value = tagColor.value;
+    currentRealTagsMap[currentTag.dataset.id].name = `tags[${tagName.value}]`;
 }
 
 function componentToHex(c) {
@@ -81,3 +98,7 @@ function componentToHex(c) {
 function rgbToHex(r, g, b) {
     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
+
+Element.prototype.remove = function(){
+    this.parentElement.removeChild(this);
+};

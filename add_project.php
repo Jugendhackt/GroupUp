@@ -67,7 +67,8 @@
     <h2>Tags</h2>
     <label for="tagName">Tag Name:</label>
     <input type="text" id="tagName" class="uk-input uk-width-1-5@m uk-width-1-1@s">
-    <input type="color" id="tagColor" class="uk-button">
+    <span class="uk-icon uk-icon-button" id="colorPicker" uk-icon="icon: paint-bucket"></span>
+    <input type="color" id="tagColor" class="uk-button uk-hidden">
     <div class="uk-margin-top">
         <span class="uk-child-width-1-1@s uk-child-width-auto@m" id="tagList">
 

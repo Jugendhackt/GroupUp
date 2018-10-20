@@ -66,3 +66,7 @@ footer {
 footer stroke {
     text-decoration: line-through;
 }
+
+#colorPicker {
+    color: #fff;
+}
