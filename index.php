@@ -70,5 +70,9 @@ card;
 <!-- Scripts need to load at the end to imrpove loading time -->
 <script src="js/uikit.min.js"></script>
 <script src="js/uikit-icons.min.js"></script>
+
+<?php
+    require 'misc/footer.php';
+?>
 </body>
 </html>
