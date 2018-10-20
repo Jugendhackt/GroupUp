@@ -49,3 +49,16 @@
 
         return $comments;
     }
+
+    function getTagsByProjectId(int $projectId)
+    {
+        global $__DB;
+        $sql = "SELECT * FROM tags where projectId='$projectId'";
+        $resullt = $__DB->query($sql);
+        $tags = array();
+        while ($row = $resullt->fetch_assoc()) {
+            array_push($tags, $row);
+        }
+
+        return $tags;
+    }
