@@ -1,5 +1,9 @@
-<!doctype html>
-<html lang="en">
+<?php
+
+    require_once __DIR__ . "/functions/generic.php";
+    $events = getEvents();
+
+?><html lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -24,9 +28,11 @@
     <!-- TODO: Make it possible to add more events (over admin dashboard?) -->
     <label for="projectEvent">Event</label>
     <select name="projectEvent" id="projectEvent" class="uk-select">
-        <option value="jhberlin">Jugendhackt Berlin 2018</option>
-        <option value="gamejam">Demokratie Labor</option>
-        <option value="jhberlin">Jugendhackt Berlin 2018 x re:coded</option>
+        <?php
+            foreach ($events as $event){
+                echo "<option value='" . $event['id'] . "'>" . $event['name'] . "</option>";
+            }
+        ?>
     </select>
 
     <div class="uk-child-width-1-2@m uk-child-width-1-1@s" uk-grid>
