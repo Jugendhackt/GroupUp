@@ -80,8 +80,12 @@
     <div id="tagsInForm"></div>
 </form>
 </div>
+
+<?php
+    require 'misc/footer.php';
+?>
 <!-- Scripts need to load at the end to improve loading time -->
 <script src="js/uikit.min.js"></script>
 <script src="js/uikit-icons.min.js"></script>
 </body>
-</html>*
+</html>

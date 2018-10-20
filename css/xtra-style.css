@@ -57,3 +57,12 @@ textarea {
     padding: 6.5px 4px;
     margin: 2px;
 }
+
+footer {
+    padding: 25px;
+    text-align: center;
+}
+
+footer stroke {
+    text-decoration: line-through;
+}
