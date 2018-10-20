@@ -1,11 +1,17 @@
+<?php
+
+    session_start();
+
+?>
+
 <!-- Navigation for main page, add page and search page -->
 <nav class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-left">
-        <a class="uk-navbar-item uk-logo" href="/">GroupUp</a>
+        <a class="uk-navbar-item uk-logo" href="index.php">GroupUp</a>
     </div>
     <div class="uk-navbar-center">
         <div class="uk-navbar-item">
-            <input type="text" class="uk-input" name="username" placeholder="Username">
+            <input type="text" class="uk-input" name="username" placeholder="Username" value="<?php echo $_SESSION['username'] ?>">
         </div>
     </div>
     <div class="uk-navbar-right">
