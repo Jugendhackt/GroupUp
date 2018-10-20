@@ -12,18 +12,21 @@
     <title>GroupUp</title>
 </head>
 <body>
+
+<!-- Navigation for main page, add page and search page -->
 <nav class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-left">
         <a class="uk-navbar-item uk-logo">GroupUp</a>
     </div>
     <div class="uk-navbar-right">
         <ul class="uk-navbar-nav">
-            <li><a><span class="uk-icon-button" uk-icon="icon: plus"></span></a></li>
+            <li><a href="add_project.html"><span class="uk-icon-button" uk-icon="icon: plus"></span></a></li>
             <li><a><span class="uk-icon-button" uk-icon="icon: search"></span></a></li>
         </ul>
     </div>
 
 </nav>
+
 <!-- Projects -->
 <div class="uk-margin-large-left uk-margin-large-top uk-margin-large-right">
     <h2>Projects</h2>
@@ -112,6 +115,8 @@
         </div>
     </div>
 </div>
+
+<!-- Scripts need to load at the end to imrpove loading time -->
 <script src="js/uikit.min.js"></script>
 <script src="js/uikit-icons.min.js"></script>
 </body>
