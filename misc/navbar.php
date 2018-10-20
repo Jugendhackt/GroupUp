@@ -1,7 +1,12 @@
 <!-- Navigation for main page, add page and search page -->
 <nav class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-left">
-        <a class="uk-navbar-item uk-logo">GroupUp</a>
+        <a class="uk-navbar-item uk-logo" href="/">GroupUp</a>
+    </div>
+    <div class="uk-navbar-center">
+        <div class="uk-navbar-item">
+            <input type="text" class="uk-input" name="username" placeholder="Username">
+        </div>
     </div>
     <div class="uk-navbar-right">
         <ul class="uk-navbar-nav">
