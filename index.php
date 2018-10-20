@@ -1,4 +1,10 @@
-<!doctype html>
+<?php
+
+    require_once __DIR__ . '/functions/generic.php';
+    $projects = getProjects();
+
+?>
+
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -32,6 +38,31 @@
     <h2>Projects</h2>
 
     <div class="uk-flex uk-flex-wrap">
+
+        <?php
+            foreach ($projects as $project){
+                $event = getEventById($project['eventId']);
+                $tags = getTagsByProjectId($project['id']);
+                echo <<<card
+        <div class="uk-card uk-width-large uk-height-large">
+            <div class="uk-card-body">
+                <h3 class="uk-card-title">{$project['name']}</h3>
+                <p class="uk-text-muted">{$event['name']}</p>
+                <p>{$project['description']}</p>
+            </div>
+            <div class="uk-card-footer">
+card;
+                foreach ($tags as $tag){
+                    echo "<span class='uk-label uk-label-" . $tag['color'] . "'>" . $tag['value'] . "</span>&nbsp;";
+                }
+            echo <<<card
+            </div>
+        </div>
+card;
+            }
+
+        ?>
+
         <div class="uk-card uk-width-large uk-height-large">
             <div class="uk-card-body">
                 <h3 class="uk-card-title">Some Project</h3>

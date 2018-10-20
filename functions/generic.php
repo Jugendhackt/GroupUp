@@ -1,6 +1,6 @@
 <?php
 
-    require_once __DIR__ . '../handler/db.php';
+    require_once __DIR__ . '/../handler/db.php';
 
     function getProjects(){
         global $__DB;
@@ -53,7 +53,7 @@
     function getTagsByProjectId(int $projectId)
     {
         global $__DB;
-        $sql = "SELECT * FROM tags where projectId='$projectId'";
+        $sql = "select * from tagged left join tags on tagged.tagId = tags.id where tagged.projectId='$projectId'";
         $resullt = $__DB->query($sql);
         $tags = array();
         while ($row = $resullt->fetch_assoc()) {
@@ -61,4 +61,11 @@
         }
 
         return $tags;
+    }
+
+    function getEventById(int $eventId){
+        global $__DB;
+        $sql = "SELECT * FROM events where id='$eventId'";
+        $result = $__DB->query($sql);
+        return $result->fetch_assoc();
     }
