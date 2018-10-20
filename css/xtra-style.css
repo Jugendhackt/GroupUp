@@ -1,8 +1,58 @@
+/* index.php */
 .hide-details {
     visibility: hidden;
 }
 
-/* index.php */
 .opened {
     width: 100%;
+}
+
+.opened {
+    width: 100%;
+}
+
+.uk-card {
+    border: solid 1px rgba(0,0,0,.2);
+    border-radius: 2px;
+    margin: 5px;
+    transition: width 200ms ease, border-width 150ms ease;
+}
+
+.uk-card.opened {
+    border-width: 2px;
+}
+
+.uk-card p {
+    word-wrap: break-word;
+}
+
+/* Extra Styling for Add Project */
+
+textarea {
+    resize: none;
+}
+
+.active {
+    background: #ebebeb;
+}
+
+.active a span {
+    background: #e5e5e5;
+}
+
+.active a span:hover {
+    background: #e5e5e5;
+}
+
+.active {
+    border-bottom: #e5e5e5 1px solid;
+}
+
+.uk-navbar-container {
+    border-bottom: #f3f3f3 solid 1px;
+}
+
+.tag {
+    text-align: center;
+    padding: 2px 4px;
 }

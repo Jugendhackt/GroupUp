@@ -19,14 +19,14 @@
 
     <script>
         function openProject(id) {
-            var all=document.getElementsByClassName('opened');
+            let all=document.getElementsByClassName('opened');
             [].forEach.call(all, function (element) {
                 if (element.id !== "project_" + id){
                     element.classList.remove("opened");
                     element.classList.remove("uk-flex-first");
                 }
             });
-            var elem=document.getElementById("project_" + id);
+            let elem=document.getElementById("project_" + id);
             elem.classList.toggle("opened");
             elem.classList.toggle("uk-flex-first");
         }
@@ -35,20 +35,7 @@
 </head>
 <body>
 
-<!-- Navigation for main page, add page and search page -->
-<nav class="uk-navbar-container" uk-navbar>
-    <div class="uk-navbar-left">
-        <a class="uk-navbar-item uk-logo">GroupUp</a>
-    </div>
-    <div class="uk-navbar-right">
-        <ul class="uk-navbar-nav">
-            <li><a href="add_project.html"><span class="uk-icon-button" uk-icon="icon: plus"></span></a></li>
-            <li><a><span class="uk-icon-button" uk-icon="icon: search"></span></a></li>
-        </ul>
-    </div>
-
-</nav>
-
+<?php require 'misc/navbar.php' ?>
 <!-- Projects -->
 <div class="uk-margin-large-left uk-margin-large-top uk-margin-large-right">
     <h2>Projects</h2>
@@ -76,7 +63,6 @@ card;
         </div>
 card;
             }
-
         ?>
     </div>
 </div>
