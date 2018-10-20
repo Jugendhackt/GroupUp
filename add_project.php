@@ -15,7 +15,7 @@
 <!-- Navigation for main page, add page and search page -->
 <?php require 'misc/navbar.php' ?>
 <div class="uk-container uk-margin-top">
-<form>
+<form id="form">
     <!-- Project Name -->
     <label for="projectName" style="font-size: 2em">Project Name</label>
     <input type="text" class="uk-input uk-form-large" name="projectName" id="projectName" maxlength="32">
@@ -62,20 +62,16 @@
     <label for="tagName">Tag Name:</label>
     <input type="text" id="tagName" class="uk-input uk-width-1-5@m uk-width-1-1@s">
     <input type="color" id="tagColor" class="uk-button">
-    <div id="tagList">
-        <span class="uk-child-width-1-1@s uk-child-width-auto@m">
-               <span class="uk-label tag">Tag A</span>
-               <span class="uk-label tag">Tag B</span>
-               <span class="uk-label tag">Tag C</span>
-               <span class="uk-label tag">Tag D</span>
-               <span class="uk-label tag">Tag E</span>
-               <span class="uk-label tag">Tag F</span>
-               <span class="uk-label tag">Tag G <button type="button" style="color: white" uk-close></button></span>
+    <div class="uk-margin-top">
+        <span class="uk-child-width-1-1@s uk-child-width-auto@m" id="tagList">
+
         </span>
         <span id="addTag" class="uk-icon-button" uk-icon="icon: plus"></span>
     </div>
 
     <button type="submit" class="uk-button uk-width-1-1 uk-margin-small-bottom uk-margin-medium-top">Add Project</button>
+
+    <div id="tagsInForm"></div>
 </form>
 </div>
 <!-- Scripts need to load at the end to improve loading time -->
