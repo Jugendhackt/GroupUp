@@ -51,7 +51,21 @@
             <div class="uk-card-body">
                 <h3 class="uk-card-title">{$project['name']}</h3>
                 <p class="uk-text-muted">{$event['name']}</p>
-                <p>{$project['description']}</p>
+                <div uk-grid>
+                    <div><p>{$project['description']}</p></div>
+                    <div>
+                        <h2>Probleme / Fragestellung</h2>
+                        <p>{$project['problem']}</p>
+                    </div>
+                    <div>
+                        <h2>Daten & Technologien</h2>
+                        <p>{$project['hardware']}</p>
+                    </div>
+                    <div>
+                        <h2>Was Fehlt Uns?</h2>
+                        <p>{$project['missing']}</p>
+                    </div>
+                </div>
             </div>
             <div class="uk-card-footer">
 card;
