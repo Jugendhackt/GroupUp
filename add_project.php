@@ -66,7 +66,7 @@
     <script src="js/tag-creator.js"></script>
     <h2>Tags</h2>
     <label for="tagName">Tag Name:</label>
-    <input type="text" id="tagName" class="uk-input uk-width-1-5@m uk-width-1-1@s">
+    <input type="text" id="tagName" class="uk-input uk-width-1-5@m uk-width-1-1@s" maxlength="32">
     <span class="uk-icon uk-icon-button" id="colorPicker" uk-icon="icon: paint-bucket"></span>
     <input type="color" id="tagColor" class="uk-button uk-hidden">
     <div class="uk-margin-top">
