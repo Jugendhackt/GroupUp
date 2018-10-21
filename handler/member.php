@@ -7,7 +7,7 @@
 
     switch ($action){
         case "add":
-            addMemberToProject($username, $projectId);
+            addMemberToProject($userid, $projectId);
             header("Location: ../index.php#" . $projectId);
             break;
     }
