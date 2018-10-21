@@ -74,9 +74,17 @@
                 <div class="members">
                     <ul>
 card;
+                $ismember = false;
                 foreach ($members as $member){
                     echo "<li>" . $member['name'] . "</li>";
+                    if($member['id'] === $_SESSION['uid']){
+                        $ismember = true;
+                    }
                 }
+                if(!$ismember){
+                    echo "<li><a>Ich bin dabei!</a></li>";
+                }
+
 
         echo <<<card
         </ul>
