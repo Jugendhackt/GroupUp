@@ -63,26 +63,19 @@
                     <p class="uk-text-muted">{$event['name']}</p>
                     <p>{$project['description']}</p>
                 </div>
-                    <div class="details">
+                    <div class="details uk-width-large">
                         <h2>Problems</h2>
                         <p>{$project['problem']}</p>
                     </div>
-                    <div class="details">
+                    <div class="details uk-width-large">
                         <h2>Software & Technical Gadgets</h2>
                         <p>{$project['hardware']}</p>
                     </div>
-                    <div class="details">
+                    <div class="details uk-width-large">
                         <h2>What's missing?</h2>
                         <p>{$project['missing']}</p>
                     </div>
                 </div>
-            </div>
-            <div class="uk-card-footer">
-card;
-                foreach ($tags as $tag){
-                    echo "<span style='background-color: " . $tag['color'] . ";' class='uk-label'>" . $tag['value'] . "</span>&nbsp;";
-                }
-                echo <<<card
             </div>
             <div class="members details">
             <h2>Members</h2>
@@ -103,6 +96,13 @@ card;
                 echo <<<card
         </ul>
         </div>
+        <div class="uk-card-footer">
+card;
+                foreach ($tags as $tag){
+                    echo "<span style='background-color: " . $tag['color'] . ";' class='uk-label'>" . $tag['value'] . "</span>&nbsp;";
+                }
+                echo <<<card
+            </div>
         </div>
 card;
             }
