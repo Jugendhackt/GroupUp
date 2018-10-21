@@ -20,7 +20,21 @@
         global $__DB;
 
         $sql = "insert into member values (" . $projectId . ", " . $memberid . ")";
-        $result = $__DB->query($sql);
+        if(!checkMember($memberid, $projectId)){
+            $result = $__DB->query($sql);
+        }
 
         return $result;
+    }
+
+    function checkMember(int $memberId, int $projectId){
+        global $__DB;
+        $sql = "SELECT * FROM member where projectId='" . $__DB->mysqli_real_escape_string($projectId) . "' and userId='" . $__DB->real_escape_string($memberId) ."' LIMIT 1";
+        $result = $__DB->query($sql);
+
+        if ($result->num_rows > 0 ){
+            return true;
+        }else{
+            return false;
+        }
     }
