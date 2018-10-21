@@ -1,12 +1,13 @@
 <?php
     require_once __DIR__ . '/../functions/members.php';
 
-    $action = $_POST['action'];
+    $action = $_GET['action'];
     $userid = $_SESSION['uid'];
-    $projectId = $_POST['projectId'];
+    $projectId = $_GET['projectId'];
 
     switch ($action){
         case "add":
             addMemberToProject($username, $projectId);
+            header("Location: ../index.php#" . $projectId);
             break;
     }
