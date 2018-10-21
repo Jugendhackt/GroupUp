@@ -1,7 +1,4 @@
 /* index.php */
-.hide-details {
-    visibility: hidden;
-}
 
 .opened {
     width: 100%;
@@ -15,7 +12,7 @@
     border: solid 1px rgba(0,0,0,.2);
     border-radius: 2px;
     margin: 5px;
-    transition: width 200ms ease, border-width 150ms ease;
+    transition: width 500ms ease, border-width 150ms ease;
 }
 
 .uk-card.opened {
@@ -24,6 +21,24 @@
 
 .uk-card p {
     word-wrap: break-word;
+}
+
+
+/* Navbar */
+.square {
+    text-align: center;
+    color: #fff;
+    width: 50px;
+    height: 40px;
+    padding: 0;
+    transition: all ease 500ms;
+}
+
+.square.hidden {
+    transform: rotateY(90deg);
+    transform-origin: center left;
+    transform-style: flat;
+    pointer-events: none;
 }
 
 /* Extra Styling for Add Project */
