@@ -96,7 +96,7 @@ card;
                     }
                 }
                 if(!$ismember){
-                    echo "<li><a href='handler/member.php?action=add&projectId=" . $project['id'] . "'>Ich bin dabei!</a></li>";
+                    echo "<li><a onclick='window.location = \"handler/member.php?action=add&projectId=" . $project['id'] . "\"'>Add me!</a></li>";
                 }
 
 
