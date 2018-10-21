@@ -29,8 +29,10 @@
 
     function checkMember(int $memberId, int $projectId){
         global $__DB;
-        $sql = "SELECT * FROM member where projectId='" . $__DB->mysqli_real_escape_string($projectId) . "' and userId='" . $__DB->real_escape_string($memberId) ."' LIMIT 1";
+        $sql = "SELECT * FROM member where projectId='" . $__DB->real_escape_string($projectId) . "' and userId='" . $__DB->real_escape_string($memberId) ."' LIMIT 1";
+        print_r($sql);
         $result = $__DB->query($sql);
+
 
         if ($result->num_rows > 0 ){
             return true;

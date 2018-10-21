@@ -1,4 +1,7 @@
 <?php
+
+    session_start();
+
     require_once __DIR__ . '/../functions/members.php';
 
     $action = $_GET['action'];
