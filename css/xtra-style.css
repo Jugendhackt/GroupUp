@@ -36,9 +36,18 @@
 
 .square.hidden {
     transform: rotateY(90deg);
-    transform-origin: center left;
+    transform-origin: left center;
     transform-style: flat;
     pointer-events: none;
+}
+
+#loadingSpinner {
+    transition: transform 500ms linear;
+}
+
+#loadingSpinner.hidden {
+    transform: rotateY(90deg);
+    transition: transform 500ms linear;
 }
 
 /* Extra Styling for Add Project */

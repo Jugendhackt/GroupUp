@@ -16,6 +16,7 @@
         <div class="uk-navbar-item">
             <input type="text" class="uk-input" id="usernameInput" name="username" placeholder="Username" value="<?php echo $_SESSION['username'] ?>">
             <button class="uk-button uk-button-primary hidden square" id="usernameCheckButton"><span class="uk-icon" uk-icon="icon: check"></span></button>
+            <div uk-spinner class="hidden" id="loadingSpinner"></div>
         </div>
     </div>
     <div class="uk-navbar-right">
