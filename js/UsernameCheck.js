@@ -16,7 +16,7 @@ window.onload = () => {
         let xhr = new XMLHttpRequest();
         xhr.open("post", "handler/username.php");
         xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-        xhr.send("username=" + username);
+        xhr.send("action=set&username=" + username);
     }
 };
 
