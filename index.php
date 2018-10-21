@@ -30,7 +30,12 @@
             let elem=document.getElementById("project_" + id);
             elem.classList.toggle("opened");
             elem.classList.toggle("uk-flex-first");
-            UIkit.scroll(document.body, {duration: 500}).scrollTo(document.body);
+            if(elem)
+                UIkit.scroll(document.body, {duration: 500}).scrollTo(document.body);
+        }
+
+        window.onhashchange = () => {
+            openProject(window.location.hash.replace("#", ""));
         }
     </script>
 
@@ -52,27 +57,35 @@
                 echo <<<card
         <div id="project_{$project['id']}" class="uk-card uk-width-large uk-height-large" onclick="openProject({$project['id']})">
             <div class="uk-card-body">
-                <div class="uk-child-width-1-4@m uk-child-width-1-1@s" uk-grid>
+                <div class="uk-child-width-1-5@m uk-child-width-1-1@s" uk-grid>
                 <div class="uk-width-large">
                     <h3 class="uk-card-title">{$project['name']}</h3>
                     <p class="uk-text-muted">{$event['name']}</p>
                     <p>{$project['description']}</p>
                 </div>
                     <div class="details">
-                        <h2>Probleme / Fragestellung</h2>
+                        <h2>Problems</h2>
                         <p>{$project['problem']}</p>
                     </div>
                     <div class="details">
-                        <h2>Daten & Technologien</h2>
+                        <h2>Software & Technical Gadgets</h2>
                         <p>{$project['hardware']}</p>
                     </div>
                     <div class="details">
-                        <h2>Was Fehlt Uns?</h2>
+                        <h2>What's missing?</h2>
                         <p>{$project['missing']}</p>
                     </div>
                 </div>
-                <div class="members">
-                    <ul>
+            </div>
+            <div class="uk-card-footer">
+card;
+                foreach ($tags as $tag){
+                    echo "<span style='background-color: " . $tag['color'] . ";' class='uk-label'>" . $tag['value'] . "</span>&nbsp;";
+                }
+                echo <<<card
+            </div>
+            <div class="members details">
+                    <ul class="uk-list uk-list-bullet">
 card;
                 $ismember = false;
                 foreach ($members as $member){
@@ -86,17 +99,9 @@ card;
                 }
 
 
-        echo <<<card
+                echo <<<card
         </ul>
         </div>
-            </div>
-            <div class="uk-card-footer">
-card;
-                foreach ($tags as $tag){
-                    echo "<span style='background-color: " . $tag['color'] . ";' class='uk-label'>" . $tag['value'] . "</span>&nbsp;";
-                }
-            echo <<<card
-            </div>
         </div>
 card;
             }
@@ -107,6 +112,10 @@ card;
 <!-- Scripts need to load at the end to imrpove loading time -->
 <script src="js/uikit.min.js"></script>
 <script src="js/uikit-icons.min.js"></script>
+
+<script>
+    window.onhashchange();
+</script>
 
 <?php
     require 'misc/footer.php';

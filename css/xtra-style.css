@@ -13,7 +13,6 @@
     border-radius: 2px;
     margin: 5px;
     transition: width 500ms ease, border-width 150ms ease;
-    overflow: hidden;
 }
 
 .uk-card.opened {
@@ -59,6 +58,10 @@
 #loadingSpinner.hidden {
     transform: rotateY(90deg);
     transition: transform 500ms linear;
+}
+
+#usernameInput {
+    text-transform: capitalize;
 }
 
 /* Extra Styling for Add Project */
