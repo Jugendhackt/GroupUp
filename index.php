@@ -56,7 +56,7 @@
             <div class="uk-card-footer">
 card;
                 foreach ($tags as $tag){
-                    echo "<span class='uk-label uk-label-" . $tag['color'] . "'>" . $tag['value'] . "</span>&nbsp;";
+                    echo "<span style='background-color: " . $tag['color'] . ";' class='uk-label'>" . $tag['value'] . "</span>&nbsp;";
                 }
             echo <<<card
             </div>

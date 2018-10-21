@@ -12,3 +12,5 @@
     $tags = $_POST['tags'];
 
     addProject($name, $description, $hardware, $missing, $problems, $eventId, $tags);
+
+    header("Location: ../index.php");
