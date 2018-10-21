@@ -20,7 +20,8 @@ function addNewTag() {
     currentTagInput = document.createElement("INPUT");
     currentTag.classList.add("uk-label");
     currentTag.classList.add("tag");
-    tagColor.value = randomColors[Math.floor(Math.random() * randomColors.length)];
+    let color = randomColors[Math.floor(Math.random() * randomColors.length)];
+    tagColor.value = color; // Otherwise the color gets translated to rgb and we don't want rgb!
     currentTag.style.backgroundColor = tagColor.value;
     currentTag.innerText = tagName.value;
     currentTag.dataset.id = counter++;
@@ -29,7 +30,8 @@ function addNewTag() {
     currentTagInput.type = "hidden";
     currentTagInput.name =`tags[${currentTag.innerText}]`;
     currentTagInput.dataset.id = currentTag.dataset.id;
-    colorPicker.style.backgroundColor = currentTag.style.backgroundColor;
+    currentTagInput.value = color;
+    colorPicker.style.backgroundColor = color;
     currentRealTagsMap[currentTag.dataset.id] = currentTagInput;
     tagsInForm.append(currentTagInput);
     currentTag.onclick = (ev) => {
