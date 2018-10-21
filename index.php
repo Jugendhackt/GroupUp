@@ -84,6 +84,7 @@ card;
                 }
                 echo <<<card
             </div>
+            <h2>Members</h2>
             <div class="members details">
                     <ul class="uk-list uk-list-bullet">
 card;

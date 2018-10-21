@@ -30,7 +30,7 @@
 
 .opened .details {
     display: initial;
-    width: initial;
+    width: 450px;
     transition: 500ms ease width;
 }
 
