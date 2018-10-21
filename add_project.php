@@ -19,7 +19,7 @@
 <!-- Navigation for main page, add page and search page -->
 <?php require 'misc/navbar.php' ?>
 <div class="uk-container uk-margin-top">
-<form id="form">
+<form id="form" action="handler/add.php" method="post">
     <!-- Project Name -->
     <label for="projectName" style="font-size: 2em">Project Name</label>
     <input type="text" class="uk-input uk-form-large" name="projectName" id="projectName" maxlength="32">
@@ -44,7 +44,7 @@
         <div class="uk-card-body">
             <!-- Project Problems / Questions -->
             <label for="projectProblems" >Problems</label>
-            <textarea class="uk-textarea uk-height-medium uk-margin-remove-right" maxlength="300" name="projectDescription" id="projectProblems"></textarea>
+            <textarea class="uk-textarea uk-height-medium uk-margin-remove-right" maxlength="300" name="projectProblems" id="projectProblems"></textarea>
         </div>
     </div>
 
