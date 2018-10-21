@@ -69,6 +69,7 @@
                         <p>{$project['missing']}</p>
                     </div>
                 </div>
+                <div class="members"></div>
             </div>
             <div class="uk-card-footer">
 card;
