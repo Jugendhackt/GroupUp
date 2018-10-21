@@ -29,6 +29,7 @@
             let elem=document.getElementById("project_" + id);
             elem.classList.toggle("opened");
             elem.classList.toggle("uk-flex-first");
+            UIkit.scroll(document.body, {duration: 500}).scrollTo(document.body);
         }
     </script>
 
@@ -49,19 +50,21 @@
                 echo <<<card
         <div id="project_{$project['id']}" class="uk-card uk-width-large uk-height-large" onclick="openProject({$project['id']})">
             <div class="uk-card-body">
-                <h3 class="uk-card-title">{$project['name']}</h3>
-                <p class="uk-text-muted">{$event['name']}</p>
-                <div uk-grid>
-                    <div><p>{$project['description']}</p></div>
-                    <div>
+                <div class="uk-child-width-1-4@m uk-child-width-1-1@s" uk-grid>
+                <div class="uk-width-large">
+                    <h3 class="uk-card-title">{$project['name']}</h3>
+                    <p class="uk-text-muted">{$event['name']}</p>
+                    <p>{$project['description']}</p>
+                </div>
+                    <div class="details">
                         <h2>Probleme / Fragestellung</h2>
                         <p>{$project['problem']}</p>
                     </div>
-                    <div>
+                    <div class="details">
                         <h2>Daten & Technologien</h2>
                         <p>{$project['hardware']}</p>
                     </div>
-                    <div>
+                    <div class="details">
                         <h2>Was Fehlt Uns?</h2>
                         <p>{$project['missing']}</p>
                     </div>

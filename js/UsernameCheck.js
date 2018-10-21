@@ -38,8 +38,8 @@ window.onload = () => {
 };
 
 function checkUsername(){
-    spinner.classList.remove("hidden");
     if(usernameInput.value){
+        spinner.classList.remove("hidden");
         console.log("Checking if your username is taken...");
         username = usernameInput.value;
         let xhr = new XMLHttpRequest();

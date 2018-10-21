@@ -13,6 +13,7 @@
     border-radius: 2px;
     margin: 5px;
     transition: width 500ms ease, border-width 150ms ease;
+    overflow: hidden;
 }
 
 .uk-card.opened {
@@ -23,6 +24,16 @@
     word-wrap: break-word;
 }
 
+.details {
+    width: 0;
+    display: none;
+}
+
+.opened .details {
+    display: initial;
+    width: initial;
+    transition: 500ms ease width;
+}
 
 /* Navbar */
 .square {
