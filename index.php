@@ -1,6 +1,7 @@
 <?php
 
     require_once __DIR__ . '/functions/generic.php';
+    require_once __DIR__ . '/functions/members.php';
     $projects = getProjects();
 
 ?>
@@ -47,6 +48,7 @@
             foreach ($projects as $project){
                 $event = getEventById($project['eventId']);
                 $tags = getTagsByProjectId($project['id']);
+                $members = getProjectMembers($project['id']);
                 echo <<<card
         <div id="project_{$project['id']}" class="uk-card uk-width-large uk-height-large" onclick="openProject({$project['id']})">
             <div class="uk-card-body">
@@ -69,7 +71,16 @@
                         <p>{$project['missing']}</p>
                     </div>
                 </div>
-                <div class="members"></div>
+                <div class="members">
+                    <ul>
+card;
+                foreach ($members as $member){
+                    echo "<li>" . $member['name'] . "</li>";
+                }
+
+        echo <<<card
+        </ul>
+        </div>
             </div>
             <div class="uk-card-footer">
 card;
