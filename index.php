@@ -55,7 +55,7 @@
                 $tags = getTagsByProjectId($project['id']);
                 $members = getProjectMembers($project['id']);
                 echo <<<card
-        <div id="project_{$project['id']}" class="uk-card uk-width-large uk-height-large" onclick="openProject({$project['id']})">
+        <div id="project_{$project['id']}" class="uk-card uk-width-large" onclick="openProject({$project['id']})">
             <div class="uk-card-body">
                 <div class="uk-child-width-1-5@m uk-child-width-1-1@s" uk-grid>
                 <div class="uk-width-large">
@@ -84,8 +84,8 @@ card;
                 }
                 echo <<<card
             </div>
-            <h2>Members</h2>
             <div class="members details">
+            <h2>Members</h2>
                     <ul class="uk-list uk-list-bullet">
 card;
                 $ismember = false;
