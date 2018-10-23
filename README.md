@@ -39,7 +39,7 @@ First make sure you got all the Requirements
 
 ### Installation
  1. Enter your mysql database credentials into `misc/vars.php`
- 2. Run install.php
+ 2. Run `php install.php`
 
 # Last Words
 
