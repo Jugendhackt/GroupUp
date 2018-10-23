@@ -29,7 +29,19 @@ You can. But why try to delete an idea if you can edit it or comment on it or ev
 
 Of course you can! We're on Github! Just fork this repository and make changes to it! Just make sure to hold on to the MIT License! (The LICENSE File)
 
-### Last Words
+# How do I install GroupUp?
+
+First make sure you got all the Requirements
+
+### Requirements
+- A webserver which can run php 7 (php's build-in server works as well)
+- A mysql database
+
+### Installation
+ 1. Enter your mysql database credentials into `misc/vars.php`
+ 2. Run install.php
+
+# Last Words
 
 Open-Source is wonderful and so we like to contribute to it! Make cool things public to everyone and let them help improve them!
 
