@@ -68,9 +68,12 @@ DROP TABLE IF EXISTS `projects`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `projects` (
   `id` int(6) NOT NULL AUTO_INCREMENT,
-  `name` varchar(32) NOT NULL,
   `description` text NOT NULL,
+  `hardware` text NOT NULL,
+  `missing` text NOT NULL,
+  `problem` text NOT NULL,
   `eventId` int(6) NOT NULL,
+  `userId` int(6) NOT NULL,
   `insert_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
