@@ -68,6 +68,7 @@ DROP TABLE IF EXISTS `projects`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `projects` (
   `id` int(6) NOT NULL AUTO_INCREMENT,
+  `name` varchar(32) NOT NULL,
   `description` text NOT NULL,
   `hardware` text NOT NULL,
   `missing` text NOT NULL,
